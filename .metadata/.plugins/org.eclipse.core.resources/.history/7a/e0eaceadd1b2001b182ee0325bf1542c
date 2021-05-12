@@ -1,0 +1,25 @@
+package com.jsplec.bbs.dao;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
+public class BDao {
+	
+	DataSource dataSource;
+	
+	public BDao() {
+		try {
+			Context context = new InitialContext();  //server context.xml연결
+			dataSource = (DataSource) context.lookup("java:comp/env/jdbv/mvc");
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
+	
+	
+}  //--------

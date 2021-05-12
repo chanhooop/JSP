@@ -1,0 +1,43 @@
+<%@page import="java.io.PrintWriter"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>파일 저장 결과</h2>
+<%
+	request.setCharacterEncoding("utf-8");
+	String count = request.getParameter("count");
+	String size = request.getParameter("size");
+	String[] color = request.getParameterValues("color");
+	
+	String filename = "file2.txt";
+	// 저장된 파일을 read파일로 켜준다!!
+	
+	PrintWriter writer = null;
+	String result;			// 13번에 보낼떄 확인
+	try{
+		String filePath = application.getRealPath("/" + filename);
+		writer = new PrintWriter(filePath);
+		writer.println("수량 :" + count);
+		writer.println("크기 :"+ size);
+		writer.println("색상 :"+ color);
+		result = "success";
+	}catch(Exception e){
+		result = "fail";
+	}finally{
+		try{
+			writer.close();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+	
+	response.sendRedirect("cart_02.jsp?result="+result);
+%>
+</body>
+</html>

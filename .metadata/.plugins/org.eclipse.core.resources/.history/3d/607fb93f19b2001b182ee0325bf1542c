@@ -1,0 +1,71 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+	function checkLogin() {
+		var form = document.loginForm;  //반복되는 부분 변수로 만들수 있다
+		 	      //document는 이 문서. loginForm은 폼태그 이름
+		
+		// Empty Check
+		if(form.userid.value == ""){
+			alert("제대로 입력하세요!");
+			form.userid.focus();
+			return false; //false값을 안줘버리면 액션페이지로 넘어가 버린다!!
+		}else if(form.userid.value == ""){
+			alert("제대로 입력하세요!");
+			form.userid.focus();
+			return false; //false값을 안줘버리면 액션페이지로 넘어가 버린다!!
+		if(form.name.value == ""){
+			alert("제대로 입력하세요!");
+			form.name.focus();
+			return false; //false값을 안줘버리면 액션페이지로 넘어가 버린다!!
+		}
+		if(form.tel.value == ""){
+			alert("제대로 입력하세요!");
+			form.tel.focus();
+			return false; //false값을 안줘버리면 액션페이지로 넘어가 버린다!!
+		}
+		if(form.address.value == ""){
+			alert("제대로 입력하세요!");
+			form.address.focus();
+			return false; //false값을 안줘버리면 액션페이지로 넘어가 버린다!!
+		}
+		
+		
+		
+		form.submit();  
+		
+	}
+</script>
+<body>
+
+	
+<form name="loginForm" action="purchaserInsert_02.jsp" method="post">
+	<table>
+		<tr>
+			<td>사용자 ID:</td>
+			<td><input type="text" name="userid"></td>		
+		</tr>
+		<tr>
+			<td>성명:</td>
+			<td><input type="text" name="name"></td>
+		</tr>
+		<tr>
+			<td>전화번호:</td>
+			<td><input type="text" name="tel"></td>
+		</tr>
+		<tr>
+			<td>주소:</td>
+			<td><input type="text" name="address"></td>
+		</tr>
+	</table>
+		<tr><td><input type="button" value="확인" onclick="checkLogin()"></td></tr>
+</form>
+
+</body>
+</html>

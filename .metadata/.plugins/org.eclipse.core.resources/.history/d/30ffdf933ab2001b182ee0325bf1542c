@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h1>주소록명단 리스트</h1>
+
+<form action="">
+	검색선택 : <select name="condition">
+			<option value="name">이름</option>
+			<option value="tel">전화번호</option>
+		</select>>
+		<input type="text" name="search">
+		<input type="button" value="검색" onclick="react">
+</form>
+	
+<form name="react" action="">
+
+<%
+
+
+%>
+
+</form>
+
+</body>
+</html>
